@@ -30,3 +30,7 @@ tasks {
         dependsOn(clean)  
     }
 }
+
+tasks.named<JavaExec>("run") {
+    standardInput = System.`in`
+}
