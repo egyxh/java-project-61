@@ -2,6 +2,8 @@ plugins {
     java
     id("com.github.ben-manes.versions") version "0.51.0"
     application
+    id("checkstyle")
+
 }
 
 application {
@@ -33,4 +35,10 @@ tasks {
 
 tasks.named<JavaExec>("run") {
     standardInput = System.`in`
+}
+
+checkstyle {
+    toolVersion = "10.12.4" 
+    configFile = rootProject.file("config/checkstyle/checkstyle.xml")
+    isIgnoreFailures = false 
 }
