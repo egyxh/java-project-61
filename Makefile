@@ -1,19 +1,19 @@
 APP_NAME := app
 
-.PHONY: build run-dist clean
+.PHONY: build run-dist run clean
 
 build:
-	@echo
+	@echo "Building the project..."
 	./gradlew installDist
 
 run-dist: build
-	@echo
-	./build/install/$(APP_NAME)/bin/$(APP_NAME)
+	@echo "Running distribution..."
+	./build/install/installDist/bin/${APP_NAME}
 
 run:
-	@echo
+	@echo "Running the app..."
 	./gradlew run
 
 clean:
-	@echo
+	@echo "Cleaning..."
 	./gradlew clean
