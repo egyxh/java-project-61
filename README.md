@@ -28,4 +28,4 @@
 [![asciicast](https://asciinema.org/a/fzdMf9tdnOXfY32gplSBZw9uy.svg)](https://asciinema.org/a/fzdMf9tdnOXfY32gplSBZw9uy)
 
 ## Демонстрация игры (Prime, финальная версия)
-[![asciicast](https://asciinema.org/a/AbESbYKuuzZEAHIXIPi3nQjRT.svg)](https://asciinema.org/a/AbESbYKuuzZEAHIXIPi3nQjRT) 
+[![asciicast](https://asciinema.org/a/AbESbYKuuzZEAHIXIPi3nQjRT.svg)](https://asciinema.org/a/AbESbYKuuzZEAHIXIPi3nQjRT)
