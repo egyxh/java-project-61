@@ -68,7 +68,7 @@ tasks.withType<Checkstyle> {
 }
 
 tasks.installDist {
-    destinationDir = file("$buildDir/install/$name")
+    destinationDir = file("$buildDir/install/app/")
     doLast {
         println("Дистрибутив создан в: $destinationDir")
     }

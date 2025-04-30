@@ -8,7 +8,7 @@ build:
 
 run-dist: build
 	@echo "Running distribution..."
-	./build/install/installDist/bin/${APP_NAME}
+	./build/install/app/bin/${APP_NAME}
 
 run:
 	@echo "Running the app..."
