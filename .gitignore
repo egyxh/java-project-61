@@ -3,7 +3,6 @@
 *.ipr
 
 .gradle/
-build/
 out/
 
 logs/
