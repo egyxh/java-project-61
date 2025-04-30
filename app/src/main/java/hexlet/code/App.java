@@ -32,11 +32,12 @@ public class App {
             System.out.println("Enter the number of game to play");
             String numOfGame = sc.nextLine().trim();
             if (!numOfGame.matches("[0-6]")) {
-                System.out.println("Допустимые значения: 0, 1, 2, 3, 4, 6");
+                System.out.println("Допустимые значения: 0, 1, 2, 3, 4,5, 6");
                 continue;
             }
             if (numOfGame.equals("1")) {
                 greeting(sc);
+                return;
             }
             if (numOfGame.equals("0")) {
                 System.out.println("Goodbye " + us.getName() + "!");
