@@ -22,6 +22,7 @@ public class App {
 
     public static void gameChooser(User us, Scanner sc) {
         while (true) {
+            System.out.println("Please enter the game number and press Enter.");
             System.out.println("0 - Exit");
             System.out.println("1 - Greet");
             System.out.println("2 - Even");
@@ -29,7 +30,7 @@ public class App {
             System.out.println("4 - GCD");
             System.out.println("5 - Progression");
             System.out.println("6 - Prime");
-            System.out.println("Enter the number of game to play");
+            System.out.println("Your choice: ");
             String numOfGame = sc.nextLine().trim();
             if (!numOfGame.matches("[0-6]")) {
                 System.out.println("Допустимые значения: 0, 1, 2, 3, 4, 5, 6");
