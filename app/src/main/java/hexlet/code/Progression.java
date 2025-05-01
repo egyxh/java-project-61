@@ -16,7 +16,7 @@ public class Progression {
         while (correctAnswersCounter < ANSWERS_TO_WIN) {
             int[] arr = randomArray();
             int indexOfHiddenNum = RANDOM.nextInt(10);
-            System.out.println("Question: ");
+            System.out.print("Question: ");
             for (int i = 0; i < arr.length; i++) {
                 if (i == indexOfHiddenNum) {
                     System.out.print(".. ");
@@ -24,7 +24,7 @@ public class Progression {
                     System.out.print(arr[i] + " ");
                 }
             }
-            System.out.println("Your answer: ");
+            System.out.print("\n" +"Your answer: ");
             String answer = scanner.nextLine().trim();
             try {
                 int userAnswer = Integer.parseInt(answer);
