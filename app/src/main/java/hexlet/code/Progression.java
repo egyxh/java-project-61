@@ -7,8 +7,10 @@ public class Progression {
 
     private static final int ANSWERS_TO_WIN = 3;
     private static final Random RANDOM = new Random();
+    private static String USERNAME = "";
 
-    public static void progressionGame(User user, Scanner scanner) {
+    public static void progressionGame(Scanner scanner) {
+        USERNAME = App.greeting(scanner);
         int correctAnswersCounter = 0;
         System.out.println("What number is missing in the progression?");
         while (correctAnswersCounter < ANSWERS_TO_WIN) {
@@ -37,14 +39,13 @@ public class Progression {
                                     + "' is wrong answer ;(. Correct answer was '"
                                     + correctAnswer
                                     + "'.");
-                    System.out.println("Let's try again, " + user.getName() + "!");
+                    System.out.println("Let's try again, " + USERNAME + "!");
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Please, use only numbers!)");
             }
         }
-        System.out.println("Congratulations, " + user.getName() + "!");
-        App.repeatGameOffer(scanner, user);
+        System.out.println("Congratulations, " + USERNAME + "!");
     }
 
     public static int[] randomArray() {

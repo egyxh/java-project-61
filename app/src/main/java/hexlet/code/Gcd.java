@@ -4,11 +4,13 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Gcd {
-
+    
     private static final int ANSWERS_TO_WIN = 3;
     private static final Random RANDOM = new Random();
-
-    public static void gcdGame(User us, Scanner sc) {
+    private static String USERNAME = "";
+    
+    public static void gcdGame(Scanner sc) {
+        USERNAME = App.greeting(sc);
         int correctAnswers = 0;
         System.out.println("Find the greatest common divisor of given numbers.");
         while (correctAnswers < ANSWERS_TO_WIN) {
@@ -31,16 +33,15 @@ public class Gcd {
                                     + "is wrong answer ;(. Correct answer was '"
                                     + correctAnswer
                                     + "'.");
-                    System.out.println("Let's try again, " + us.getName() + "!");
+                    System.out.println("Let's try again, " + USERNAME + "!");
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Please, use only numbers!)");
             }
         }
-        System.out.println("Congratulations, " + us.getName() + "!");
-        App.repeatGameOffer(sc, us);
+        System.out.println("Congratulations, " + USERNAME + "!");
     }
-
+    
     public static int gcdFinder(int x, int y) {
         if (y == 0) {
             return Math.abs(x);
@@ -48,11 +49,11 @@ public class Gcd {
             return gcdFinder(y, (x % y));
         }
     }
-
+    
     public static int randomNum() {
         return 1 + RANDOM.nextInt(100);
     }
-
+    
     public static int randomNum(int x) {
         int result;
         do {

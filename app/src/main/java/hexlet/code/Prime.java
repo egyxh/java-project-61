@@ -8,8 +8,10 @@ public class Prime {
 
     private static final int ANSWERS_TO_WIN = 3;
     private static final Random RANDOM = new Random();
+    private static String USERNAME = "";
 
-    public static void primeGame(User user, Scanner scanner) {
+    public static void primeGame(Scanner scanner) {
+        USERNAME = App.greeting(scanner);
         int correctAnswersCounter = 0;
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         String yes = "yes";
@@ -36,15 +38,14 @@ public class Prime {
                                         + " is wrong answer ;(. Correct answer was '"
                                         + yesOrNo
                                         + "'.");
-                        System.out.println("Let's try again, " + user.getName() + "!");
+                        System.out.println("Let's try again, " + USERNAME + "!");
                     }
                 }
             } catch (IllegalFormatException e) {
                 System.out.println("Please, use only 'yes' or 'no'!)");
             }
         }
-        System.out.println("Congratulations, " + user.getName() + "!");
-        App.repeatGameOffer(scanner, user);
+        System.out.println("Congratulations, " + USERNAME + "!");
     }
 
     public static boolean isPrime(int x) {

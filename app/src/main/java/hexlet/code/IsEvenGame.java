@@ -3,8 +3,10 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class IsEvenGame {
+    private static String USERNAME = "";
 
-    public static void runGameOne(User currentUser, Scanner sc) {
+    public static void runGameOne(Scanner sc) {
+        USERNAME = App.greeting(sc);
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         int x = 0; // right answers counter
         int z = 0; // non-repeat num checker
@@ -23,7 +25,7 @@ public class IsEvenGame {
                     System.out.println("Correct!");
                 } else {
                     System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'");
-                    System.out.println("Let's try again, " + currentUser.getName() + "1");
+                    System.out.println("Let's try again, " + USERNAME + "1");
                 }
             } else if (answer.trim().toLowerCase().equals(n)) {
                 if (i % 2 != 0) {
@@ -31,14 +33,13 @@ public class IsEvenGame {
                     System.out.println("Correct!");
                 } else {
                     System.out.println("'no' is wrong answer ;(. Correct answer was 'yes'");
-                    System.out.println("Let's try again, " + currentUser.getName() + "!");
+                    System.out.println("Let's try again, " + USERNAME + "!");
                 }
             } else {
                 System.out.println("Please, use only 'yes' or 'no' !)");
             }
             z = i;
         }
-        System.out.println("Congratulations, " + currentUser.getName() + "!");
-        App.repeatGameOffer(sc, currentUser);
+        System.out.println("Congratulations, " + USERNAME + "!");
     }
 }
