@@ -63,7 +63,7 @@ public class Calc {
                                 + " is wrong answer ;(. Correct answer was '"
                                 + (x + y)
                                 + "'.");
-                System.out.println("Let,s try again, " + USERNAME + "!");
+                System.out.println("Let's try again, " + USERNAME + "!");
                 return false;
             }
         } catch (NumberFormatException e) {
@@ -88,7 +88,7 @@ public class Calc {
                                 + " is wrong answer ;(. Correct answer was '"
                                 + (x - y)
                                 + "'.");
-                System.out.println("Let,s try again, " + USERNAME + "!");
+                System.out.println("Let's try again, " + USERNAME + "!");
                 return false;
             }
         } catch (NumberFormatException e) {
@@ -113,7 +113,7 @@ public class Calc {
                                 + " is wrong answer ;(. Correct answer was '"
                                 + (x * y)
                                 + "'.");
-                System.out.println("Let,s try again, " + USERNAME + "!");
+                System.out.println("Let's try again, " + USERNAME + "!");
                 return false;
             }
         } catch (NumberFormatException e) {
