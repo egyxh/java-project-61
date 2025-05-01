@@ -29,6 +29,9 @@ public class Calc {
                 break;
             }
         }
+        if (correctAnswersCounter != 3) {
+            return;
+        }
         System.out.println("Congratulations, " + USERNAME + "!");
     }
 
