@@ -11,7 +11,7 @@ public class Calc {
 
     public static void calcGame(Scanner sc) {
         USERNAME = App.greeting(sc);
-        System.out.println("What is the result of expression?");
+        System.out.println("What is the result of the expression?");
         int x = -1;
         int y = -1;
         int correctAnswersCounter = 0; // right answers counter
