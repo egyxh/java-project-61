@@ -39,11 +39,15 @@ public class Prime {
                                         + yesOrNo
                                         + "'.");
                         System.out.println("Let's try again, " + USERNAME + "!");
+                        break;
                     }
                 }
             } catch (IllegalFormatException e) {
                 System.out.println("Please, use only 'yes' or 'no'!)");
             }
+        }
+        if (correctAnswersCounter != 3) {
+            return;
         }
         System.out.println("Congratulations, " + USERNAME + "!");
     }

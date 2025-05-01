@@ -34,10 +34,14 @@ public class Gcd {
                                     + correctAnswer
                                     + "'.");
                     System.out.println("Let's try again, " + USERNAME + "!");
+                    break;
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Please, use only numbers!)");
             }
+        }
+        if (correctAnswers != 3) {
+            return;
         }
         System.out.println("Congratulations, " + USERNAME + "!");
     }

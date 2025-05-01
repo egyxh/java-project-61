@@ -40,10 +40,14 @@ public class Progression {
                                     + correctAnswer
                                     + "'.");
                     System.out.println("Let's try again, " + USERNAME + "!");
+                    return;
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Please, use only numbers!)");
             }
+        }
+        if (correctAnswersCounter != 3) {
+            return;
         }
         System.out.println("Congratulations, " + USERNAME + "!");
     }

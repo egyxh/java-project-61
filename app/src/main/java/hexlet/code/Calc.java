@@ -22,6 +22,9 @@ public class Calc {
             if (isGamePassed) {
                 correctAnswersCounter++;
             }
+            if (!isGamePassed) {
+                break;
+            }
             if (isGamePassed && correctAnswersCounter == 3) {
                 break;
             }

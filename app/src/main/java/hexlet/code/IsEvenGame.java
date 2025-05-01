@@ -25,7 +25,8 @@ public class IsEvenGame {
                     System.out.println("Correct!");
                 } else {
                     System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'");
-                    System.out.println("Let's try again, " + USERNAME + "1");
+                    System.out.println("Let's try again, " + USERNAME + "!");
+                    break;
                 }
             } else if (answer.trim().toLowerCase().equals(n)) {
                 if (i % 2 != 0) {
@@ -34,11 +35,15 @@ public class IsEvenGame {
                 } else {
                     System.out.println("'no' is wrong answer ;(. Correct answer was 'yes'");
                     System.out.println("Let's try again, " + USERNAME + "!");
+                    break;
                 }
             } else {
                 System.out.println("Please, use only 'yes' or 'no' !)");
             }
             z = i;
+        }
+        if (x != 3) {
+            return;
         }
         System.out.println("Congratulations, " + USERNAME + "!");
     }
