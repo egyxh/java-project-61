@@ -1,15 +1,16 @@
 package hexlet.code;
 
 import java.util.Scanner;
+
 import lombok.Getter;
 
 public class App {
-
+    
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         gameChooser(sc);
     }
-
+    
     public static String greeting(Scanner sc) {
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
@@ -17,7 +18,7 @@ public class App {
         System.out.println("Hello, " + userName + "!");
         return userName;
     }
-
+    
     public static void gameChooser(Scanner sc) {
         while (true) {
             System.out.println("Please enter the game number and press Enter.");
@@ -29,7 +30,8 @@ public class App {
             System.out.println("5 - Progression");
             System.out.println("6 - Prime");
             System.out.println("Your choice: ");
-            String numOfGame = sc.nextLine().trim();
+            String numOfGame = sc.nextLine()
+                    .trim();
             if (!numOfGame.matches("[0-6]")) {
                 System.out.println("Допустимые значения: 0, 1, 2, 3, 4, 5, 6");
                 continue;
@@ -49,30 +51,30 @@ public class App {
             }
         }
     }
-
+    
     enum Games {
         EVEN("2", IsEvenGame::runGameOne),
         CALC("3", Calc::calcGame),
         GCD("4", Gcd::gcdGame),
         PROGRESSION("5", Progression::progressionGame),
         PRIME("6", Prime::primeGame);
-
+        
         @Getter
         private final String gameNum;
-        private final GameLauncher gl;
-
-        Games(String gameNum, GameLauncher gl) {
-            this.gameNum = gameNum;
-            this.gl = gl;
+        private final GameLauncher gameLauncher;
+        
+        Games(final String number, final GameLauncher launcher) {
+            this.gameNum = number;
+            this.gameLauncher = launcher;
         }
-
+        
         public void launchGame(Scanner sc) {
-            gl.launch(sc);
+            gameLauncher.launch(sc);
         }
-
+        
         @FunctionalInterface
         private interface GameLauncher {
-
+            
             void launch(Scanner sc);
         }
     }

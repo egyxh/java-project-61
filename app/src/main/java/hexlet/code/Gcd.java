@@ -6,11 +6,12 @@ import java.util.Scanner;
 public class Gcd {
     
     private static final int ANSWERS_TO_WIN = 3;
+    private static final int MAX_RANDOM_NUMBER = 100;
     private static final Random RANDOM = new Random();
-    private static String USERNAME = "";
+    private static String userName = "";
     
     public static void gcdGame(Scanner sc) {
-        USERNAME = App.greeting(sc);
+        userName = App.greeting(sc);
         int correctAnswers = 0;
         System.out.println("Find the greatest common divisor of given numbers.");
         while (correctAnswers < ANSWERS_TO_WIN) {
@@ -26,24 +27,18 @@ public class Gcd {
                     correctAnswers++;
                     System.out.println("Correct!");
                 } else {
-                    System.out.println(
-                            "'"
-                                    + answer
-                                    + "' "
-                                    + "is wrong answer ;(. Correct answer was '"
-                                    + correctAnswer
-                                    + "'.");
-                    System.out.println("Let's try again, " + USERNAME + "!");
+                    System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '"
+                            + correctAnswer + "'.");
+                    System.out.println("Let's try again, " + userName + "!");
                     break;
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Please, use only numbers!)");
             }
         }
-        if (correctAnswers != 3) {
-            return;
+        if (correctAnswers == ANSWERS_TO_WIN) {
+            System.out.println("Congratulations, " + userName + "!");
         }
-        System.out.println("Congratulations, " + USERNAME + "!");
     }
     
     public static int gcdFinder(int x, int y) {
@@ -55,7 +50,7 @@ public class Gcd {
     }
     
     public static int randomNum() {
-        return 1 + RANDOM.nextInt(100);
+        return 1 + RANDOM.nextInt(MAX_RANDOM_NUMBER);
     }
     
     public static int randomNum(int x) {

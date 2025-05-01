@@ -4,13 +4,16 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Progression {
-
+    
     private static final int ANSWERS_TO_WIN = 3;
+    private static final int PROGRESSION_LENGTH = 10;
+    private static final int MAX_FIRST_NUMBER = 50;
+    private static final int MAX_STEP = 10;
     private static final Random RANDOM = new Random();
-    private static String USERNAME = "";
-
+    private static String userName = "";
+    
     public static void progressionGame(Scanner scanner) {
-        USERNAME = App.greeting(scanner);
+        userName = App.greeting(scanner);
         int correctAnswersCounter = 0;
         System.out.println("What number is missing in the progression?");
         while (correctAnswersCounter < ANSWERS_TO_WIN) {
@@ -24,8 +27,9 @@ public class Progression {
                     System.out.print(arr[i] + " ");
                 }
             }
-            System.out.print("\n" +"Your answer: ");
-            String answer = scanner.nextLine().trim();
+            System.out.print("\n" + "Your answer: ");
+            String answer = scanner.nextLine()
+                    .trim();
             try {
                 int userAnswer = Integer.parseInt(answer);
                 int correctAnswer = arr[indexOfHiddenNum];
@@ -39,7 +43,7 @@ public class Progression {
                                     + "' is wrong answer ;(. Correct answer was '"
                                     + correctAnswer
                                     + "'.");
-                    System.out.println("Let's try again, " + USERNAME + "!");
+                    System.out.println("Let's try again, " + userName + "!");
                     return;
                 }
             } catch (NumberFormatException e) {
@@ -49,13 +53,13 @@ public class Progression {
         if (correctAnswersCounter != 3) {
             return;
         }
-        System.out.println("Congratulations, " + USERNAME + "!");
+        System.out.println("Congratulations, " + userName + "!");
     }
-
+    
     public static int[] randomArray() {
-        int firstNum = RANDOM.nextInt(50) + 1;
-        int stepOfProgression = RANDOM.nextInt(10) + 1;
-        int[] randomProgression = new int[10];
+        int firstNum = RANDOM.nextInt(MAX_FIRST_NUMBER) + 1;
+        int stepOfProgression = RANDOM.nextInt(MAX_STEP) + 1;
+        int[] randomProgression = new int[PROGRESSION_LENGTH];
         for (int i = 0; i < randomProgression.length; i++) {
             randomProgression[i] = firstNum + i * stepOfProgression;
         }
