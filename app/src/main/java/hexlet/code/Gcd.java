@@ -1,15 +1,11 @@
 package hexlet.code;
-
 import java.util.Random;
 import java.util.Scanner;
-
 public class Gcd {
-    
     private static final int ANSWERS_TO_WIN = 3;
     private static final int MAX_RANDOM_NUMBER = 100;
     private static final Random RANDOM = new Random();
     private static String userName = "";
-    
     public static void gcdGame(Scanner sc) {
         userName = App.greeting(sc);
         int correctAnswers = 0;
@@ -40,7 +36,6 @@ public class Gcd {
             System.out.println("Congratulations, " + userName + "!");
         }
     }
-    
     public static int gcdFinder(int x, int y) {
         if (y == 0) {
             return Math.abs(x);
@@ -48,11 +43,9 @@ public class Gcd {
             return gcdFinder(y, (x % y));
         }
     }
-    
     public static int randomNum() {
         return 1 + RANDOM.nextInt(MAX_RANDOM_NUMBER);
     }
-    
     public static int randomNum(int x) {
         int result;
         do {

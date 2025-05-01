@@ -1,17 +1,13 @@
 package hexlet.code;
-
 import java.util.Random;
 import java.util.Scanner;
-
 public class Calc {
-    
     private static final int ANSWERS_TO_WIN = 3;
     private static final int MAX_RANDOM_NUMBER = 100;
     private static final int MIN_RANDOM_NUMBER = 1;
     private static final int OPERATIONS_COUNT = 3;
     private static final Random RANDOM = new Random();
     private static String userName = "";
-    
     public static void calcGame(Scanner sc) {
         userName = App.greeting(sc);
         System.out.println("What is the result of the expression?");
@@ -30,11 +26,9 @@ public class Calc {
             System.out.println("Congratulations, " + userName + "!");
         }
     }
-    
     public static int randomNum() {
         return MIN_RANDOM_NUMBER + RANDOM.nextInt(MAX_RANDOM_NUMBER);
     }
-    
     public static int randomNum(int x) {
         int result;
         do {
@@ -42,7 +36,6 @@ public class Calc {
         } while (x == result);
         return result;
     }
-    
     public static boolean plusGame(Scanner sc, int x, int y) {
         try {
             System.out.println("Question: " + x + " + " + y);
@@ -67,7 +60,6 @@ public class Calc {
             return plusGame(sc, x, y);
         }
     }
-    
     public static boolean minusGame(Scanner sc, int x, int y) {
         try {
             System.out.println("Question: " + x + " - " + y);
@@ -92,7 +84,6 @@ public class Calc {
             return minusGame(sc, x, y);
         }
     }
-    
     public static boolean multiplyGame(Scanner sc, int x, int y) {
         try {
             System.out.println("Question: " + x + " * " + y);
@@ -117,7 +108,6 @@ public class Calc {
             return multiplyGame(sc, x, y);
         }
     }
-    
     public static boolean isGamePassedMethod(Scanner sc, int x, int y) {
         int methodNumber = RANDOM.nextInt(OPERATIONS_COUNT);
         return switch (methodNumber) {

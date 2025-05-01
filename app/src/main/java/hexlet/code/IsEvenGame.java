@@ -1,15 +1,11 @@
 package hexlet.code;
-
 import java.util.Random;
 import java.util.Scanner;
-
 public class IsEvenGame {
-    
     private static final int ANSWERS_TO_WIN = 3;
     private static final int MAX_RANDOM_NUMBER = 100;
     private static final Random RANDOM = new Random();
     private static String userName = "";
-    
     public static void runGameOne(Scanner sc) {
         userName = App.greeting(sc);
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
@@ -48,16 +44,14 @@ public class IsEvenGame {
             }
             j = i;
         }
-        if (correctAnswersCounter != 3) {
+        if (correctAnswersCounter != ANSWERS_TO_WIN) {
             return;
         }
         System.out.println("Congratulations, " + userName + "!");
     }
-    
     public static int randomNum() {
         return 1 + RANDOM.nextInt(MAX_RANDOM_NUMBER);
     }
-    
     public static int randomNum(int x) {
         int result;
         do {

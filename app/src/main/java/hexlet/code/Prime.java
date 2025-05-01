@@ -1,16 +1,12 @@
 package hexlet.code;
-
 import java.util.IllegalFormatException;
 import java.util.Random;
 import java.util.Scanner;
-
 public class Prime {
-    
     private static final int ANSWERS_TO_WIN = 3;
     private static final int MAX_RANDOM_NUMBER = 100;
     private static final Random RANDOM = new Random();
     private static String userName = "";
-    
     public static void primeGame(Scanner scanner) {
         userName = App.greeting(scanner);
         int correctAnswersCounter = 0;
@@ -29,7 +25,6 @@ public class Prime {
                         .toLowerCase();
                 if (!userAnswer.equals(yes) && !userAnswer.equals(no)) {
                     System.out.println("Please, use only 'yes' or 'no'!)");
-                    
                 } else {
                     if ((userAnswer.equals(yes) && rightAnswer)
                             || (userAnswer.equals(no)) && (!rightAnswer)) {
@@ -49,12 +44,11 @@ public class Prime {
                 System.out.println("Please, use only 'yes' or 'no'!)");
             }
         }
-        if (correctAnswersCounter != 3) {
+        if (correctAnswersCounter != ANSWERS_TO_WIN) {
             return;
         }
         System.out.println("Congratulations, " + userName + "!");
     }
-    
     public static boolean isPrime(int x) {
         if (x <= 1) {
             return false;
