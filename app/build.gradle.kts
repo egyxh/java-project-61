@@ -1,5 +1,4 @@
 plugins {
-    java
     application
     id("checkstyle")
     id("com.github.ben-manes.versions") version "0.51.0"

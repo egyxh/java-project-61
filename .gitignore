@@ -1,4 +1,7 @@
-.idea/
+**/build/
+**/build/*
+**/.idea/
+**/.idea/*
 *.iml
 *.ipr
 
