@@ -1,8 +1,8 @@
 package hexlet.code;
 import java.util.Random;
-public class GCDGame implements Game {
+public final class GCDGame implements Game {
     private final Random random = new Random();
-    private final int MAX_NUMBER = 100;
+    private static final int MAX_NUMBER = 100;
     public String getName() {
         return "GCD";
     }

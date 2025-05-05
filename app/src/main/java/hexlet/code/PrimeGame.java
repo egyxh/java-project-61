@@ -1,8 +1,8 @@
 package hexlet.code;
 import java.util.Random;
-public class PrimeGame implements Game {
+public final class PrimeGame implements Game {
     private final Random random = new Random();
-    private final int MAX_NUMBER = 100;
+    private static final int MAX_NUMBER = 100;
     public String getName() {
         return "Prime";
     }
@@ -14,7 +14,9 @@ public class PrimeGame implements Game {
         return new QuestionAnswer(Integer.toString(number), isPrime(number) ? "yes" : "no");
     }
     private boolean isPrime(int number) {
-        if (number < 2) return false;
+        if (number < 2) {
+            return false;
+        }
         for (int i = 2; i * i <= number; i++) {
             if (number % i == 0) {
                 return false;

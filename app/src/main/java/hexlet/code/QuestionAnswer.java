@@ -1,10 +1,10 @@
 package hexlet.code;
-public class QuestionAnswer {
+public final class QuestionAnswer {
     private final String question;
     private final String correctAnswer;
-    public QuestionAnswer(String question, String correctAnswer) {
-        this.question = question;
-        this.correctAnswer = correctAnswer;
+    public QuestionAnswer(String currentQuestion, String currentCorrectAnswer) {
+        this.question = currentQuestion;
+        this.correctAnswer = currentCorrectAnswer;
     }
     public String getQuestion() {
         return question;

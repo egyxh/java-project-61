@@ -1,8 +1,8 @@
 package hexlet.code;
 import java.util.Random;
-public class CalcGame implements Game {
+public final class CalcGame implements Game {
     private final Random random = new Random();
-    private final int MAX_NUMBER = 100;
+    private static final int MAX_NUMBER = 100;
     private final String[] operations = {"+", "-", "*"};
     public String getName() {
         return "Calc";

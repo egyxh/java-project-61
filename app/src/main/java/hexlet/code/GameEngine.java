@@ -1,12 +1,12 @@
 package hexlet.code;
 import java.util.Scanner;
-public class GameEngine {
+public final class GameEngine {
     private static final int ROUNDS_TO_WIN = 3;
     private final Scanner scanner = new Scanner(System.in);
     private final Game game;
     private String userName;
-    public GameEngine(Game game) {
-        this.game = game;
+    public GameEngine(Game currentGame) {
+        this.game = currentGame;
     }
     public boolean run() {
         greetUser();
