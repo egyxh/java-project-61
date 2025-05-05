@@ -26,7 +26,7 @@ public final class GameMenu {
                 }
                 int gameIndex = choiceNum - 2;
                 if (gameIndex >= 0 && gameIndex < games.size()) {
-                    boolean gameCompleted = new GameEngine(games.get(gameIndex)).run();
+                    new GameEngine(games.get(gameIndex)).run();
                         return;
                 } else {
                     System.out.println("Invalid choice!");

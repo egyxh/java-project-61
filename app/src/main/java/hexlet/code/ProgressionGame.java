@@ -15,15 +15,15 @@ public final class ProgressionGame implements Game {
         int start = random.nextInt(MAX_FIRST_NUMBER) + 1;
         int step = random.nextInt(MAX_STEP) + 1;
         int hiddenIndex = random.nextInt(PROGRESSION_LENGTH);
-        String question = "";
+        StringBuilder question = new StringBuilder();
         for (int i = 0; i < PROGRESSION_LENGTH; i++) {
             if (i == hiddenIndex) {
-                question += ".. ";
+                question.append(".. ");
             } else {
-                question += (start + step * i) + " ";
+                question.append(start + step * i).append(" ");
             }
         }
         int correctAnswer = start + step * hiddenIndex;
-        return new QuestionAnswer(question.trim(), Integer.toString(correctAnswer));
+        return new QuestionAnswer(question.toString().trim(), Integer.toString(correctAnswer));
     }
 }
