@@ -1,5 +1,7 @@
 package hexlet.games;
-import hexlet.code.*;
+import hexlet.code.Game;
+import hexlet.code.QuestionAnswer;
+import hexlet.code.Utils;
 public final class PrimeGame implements Game {
     private static final int MAX_NUMBER = 100;
     public String getName() {

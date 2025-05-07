@@ -1,5 +1,7 @@
 package hexlet.games;
-import hexlet.code.*;
+import hexlet.code.Game;
+import hexlet.code.QuestionAnswer;
+import hexlet.code.Utils;
 public final class ProgressionGame implements Game {
     private static final int PROGRESSION_LENGTH = 10;
     private static final int MAX_FIRST_NUMBER = 50;
