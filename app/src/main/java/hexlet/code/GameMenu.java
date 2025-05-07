@@ -1,6 +1,7 @@
 package hexlet.code;
 import java.util.List;
 import java.util.Scanner;
+import hexlet.games.*;
 public final class GameMenu {
     private final List<Game> games = List.of(
             new EvenGame(),

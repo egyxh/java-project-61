@@ -1,7 +1,6 @@
-package hexlet.code;
-import java.util.Random;
+package hexlet.games;
+import hexlet.code.*;
 public final class EvenGame implements Game {
-    private final Random random = new Random();
     private static final int MAX_NUMBER = 100;
     public String getName() {
         return "Even";
@@ -10,7 +9,7 @@ public final class EvenGame implements Game {
         return "Answer 'yes' if the number is even, otherwise answer 'no'.";
     }
     public QuestionAnswer generateQuestionAnswer() {
-        int number = random.nextInt(MAX_NUMBER) + 1;
+        int number = Utils.generateNumber(1, MAX_NUMBER);
         String correctAnswer = number % 2 == 0 ? "yes" : "no";
         return new QuestionAnswer(Integer.toString(number), correctAnswer);
     }

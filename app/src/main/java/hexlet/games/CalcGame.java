@@ -1,7 +1,6 @@
-package hexlet.code;
-import java.util.Random;
+package hexlet.games;
+import hexlet.code.*;
 public final class CalcGame implements Game {
-    private final Random random = new Random();
     private static final int MAX_NUMBER = 100;
     private final String[] operations = {"+", "-", "*"};
     public String getName() {
@@ -11,9 +10,9 @@ public final class CalcGame implements Game {
         return "What is the result of the expression?";
     }
     public QuestionAnswer generateQuestionAnswer() {
-        int a = random.nextInt(MAX_NUMBER) + 1;
-        int b = random.nextInt(MAX_NUMBER) + 1;
-        String operation = operations[random.nextInt(operations.length)];
+        int a = Utils.generateNumber(1, MAX_NUMBER);
+        int b = Utils.generateNumber(1, MAX_NUMBER);
+        String operation = operations[Utils.generateNumber(0, operations.length)];
         return new QuestionAnswer(
                 a + " " + operation + " " + b,
                 Integer.toString(calculate(a, b, operation))
