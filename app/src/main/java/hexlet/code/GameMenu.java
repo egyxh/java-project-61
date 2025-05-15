@@ -1,11 +1,12 @@
 package hexlet.code;
 import java.util.List;
 import java.util.Scanner;
-import hexlet.games.CalcGame;
-import hexlet.games.EvenGame;
-import hexlet.games.GCDGame;
-import hexlet.games.PrimeGame;
-import hexlet.games.ProgressionGame;
+import hexlet.code.games.CalcGame;
+import hexlet.code.games.EvenGame;
+import hexlet.code.games.GCDGame;
+import hexlet.code.games.PrimeGame;
+import hexlet.code.games
+.ProgressionGame;
 public final class GameMenu {
     private final List<Game> games = List.of(
             new EvenGame(),
